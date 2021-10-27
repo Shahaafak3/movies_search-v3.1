@@ -52,7 +52,7 @@ PDiskBot = Client(
 async def start_handler(_, m: Message):
     await m.reply_text("**Hey**🙏🏻 \n\n I am a Pdisk Movie Searcher Bot.\n\n✅**Send me any movie name i will give you pdisk link**\n\n ", quote=True,
                       reply_markup=InlineKeyboardMarkup([
-                                     [InlineKeyboardButton("Update Channel", url="https://t.me/ALL_WEB_SERIESSS_REQUEST_BOT")]
+                                     [InlineKeyboardButton("For help", url="https://t.me/ALL_WEB_SERIESSS_REQUEST_BOT")]
                                  ]))
     
     
