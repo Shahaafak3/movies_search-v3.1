@@ -52,26 +52,26 @@ PDiskBot = Client(
 async def start_handler(_, m: Message):
     await m.reply_text("**Hey**🙏🏻 \n\n I am a Pdisk Movie Searcher Bot.\n\n✅**Send me any movie name i will give you pdisk link**\n\n ", quote=True,
                       reply_markup=InlineKeyboardMarkup([
-                                     [InlineKeyboardButton("Update Channel", url="https://t.me/botupdates_cineworld")]
+                                     [InlineKeyboardButton("Update Channel", url="https://t.me/ALL_WEB_SERIESSS_REQUEST_BOT")]
                                  ]))
     
     
 @PDiskBot.on_message( ~filters.edited, group=-1)
 async def text_handler(_, m: Message):
-    editable = await m.reply_text("**Searching 🔎 Your Movie\n Please Wait...⏳⏳**\n\n**✅Update Channel - @botupdates_cineworld** ", quote=True,
+    editable = await m.reply_text("**Searching 🔎 Your Movie\n Please Wait...⏳⏳**\n\n**✅For Help - @ALL_WEB_SERIESSS_REQUEST_BOT** ", quote=True,
                                  reply_markup=InlineKeyboardMarkup([
-                                     [InlineKeyboardButton("Update Channel", url="https://t.me/botupdates_cineworld")]
+                                     [InlineKeyboardButton("For Any help contact", url="https://t.me/ALL_WEB_SERIESSS_REQUEST_BOT")]
                                  ]))
     response = await search_pdisk_videos(m.text.split(" ", 1)[-1], Configs.PDISK_USERNAME, Configs.PDISK_PASSWORD)
     if isinstance(response, Exception):
         traceback.print_exc()
         try: await editable.edit("Failed to search!",
                                  reply_markup=InlineKeyboardMarkup([
-                                     [InlineKeyboardButton("Update Channel", url="https://t.me/botupdates_cineworld")]
+                                     [InlineKeyboardButton("Request movie", url="https://t.me/ALL_WEB_SERIESSS_REQUEST_BOT")]
                                  ]))
         except MessageNotModified: pass
     elif not response["data"]["list"]:
-        try: await editable.edit("**If Movie Not Available then -  **🥺\n\n **Request Here - @thechoicegroup**\n")
+        try: await editable.edit("**If Movie Not Available then -  **🥺\n\n **Request Here - @ALL_WEB_SERIESSS_REQUEST_BOT**\n")
         except MessageNotModified: pass
     else:
         data = response["data"]["list"]
